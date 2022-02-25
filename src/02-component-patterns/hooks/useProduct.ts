@@ -9,12 +9,8 @@ interface onChangeProductArgs {
 
 export function useProduct ({onChange, product, value = 0}: onChangeProductArgs){
   const [counter, setCounter] = useState(value);
-
-  const isControlled = useRef( !!onChange )
   
   const increaseBy = (value: number) => {
-
-    if  (isControlled && onChange) return onChange({ counter: value, product})
 
     const newValue =  Math.max( counter + value, 0)
     setCounter(newValue)
