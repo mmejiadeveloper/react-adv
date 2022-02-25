@@ -11,6 +11,6 @@ export interface Props {
 export const ProductTitle = ({ title = '', className, style }: Props) => {
   const { product } = useContext(ProductContext)
   return (
-    <span className={`${styles.productDescription} ${className}`} style={style} >{title ?? product.title}</span>
+    <span className={`${styles.productDescription} ${className}`} style={style} >{title || product.title}</span>
   )
 }
